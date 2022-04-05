@@ -75,6 +75,7 @@ The keys are the same as above, but are nested in a `profile` object as below:
         "MAJORA_TOKENS_FILE": "/path/for/real/tokenz"
     }
 }
+}
 ```
 
 ## Documentation
