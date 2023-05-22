@@ -231,6 +231,7 @@ def cli():
 
     single_or_multi_empty.add_argument("--central-sample-id")
     empty_biosample_parser.add_argument("--sender-sample-id", "--local-sample-id")
+    empty_biosample_parser.add_argument("--anonymous-sample-id")
     empty_biosample_parser.add_argument("-m", "--metadata", action='append', nargs=3, metavar=('tag', 'key', 'value'))
     empty_biosample_parser.set_defaults(func=wrap_force_biosample_emit)
 
@@ -607,6 +608,7 @@ def wrap_force_biosample_emit(ocarina, args, metadata={}, metrics={}):
         success, obj = ocarina.api.put_force_linked_biosample(
             v_args["central_sample_id"],
             v_args["sender_sample_id"],
+            anonymous_sample_id=v_args["anonymous_sample_id"],
             metadata=metadata,
         )
 

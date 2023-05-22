@@ -23,7 +23,7 @@ class OcarinaAPI:
         return self.response_to_user(j, j)
 
     # NOTE samstudio8 2021-12-08: empty biosamples can now be tagged with key-value metadata
-    def put_force_linked_biosample(self, central_sample_id, sender_sample_id, metadata=None):
+    def put_force_linked_biosample(self, central_sample_id, sender_sample_id, anonymous_sample_id=None, metadata=None):
         if not metadata:
             metadata = {}
 
@@ -32,6 +32,7 @@ class OcarinaAPI:
                 {
                     "central_sample_id": central_sample_id,
                     "sender_sample_id": sender_sample_id,
+                    "anonymous_sample_id" : anonymous_sample_id,
                     "metadata": metadata,
                 },
             ],
